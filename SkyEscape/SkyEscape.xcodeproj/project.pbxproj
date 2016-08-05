@@ -17,19 +17,21 @@
 		091573301D540E1A00C9B907 /* SkyEscapeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0915732F1D540E1A00C9B907 /* SkyEscapeTests.swift */; };
 		0915733B1D540E1A00C9B907 /* SkyEscapeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0915733A1D540E1A00C9B907 /* SkyEscapeUITests.swift */; };
 		091573531D5410DF00C9B907 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 091573521D5410DF00C9B907 /* SpriteKit.framework */; };
-		0915735C1D54243300C9B907 /* bgMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 091573551D54243300C9B907 /* bgMusic.mp3 */; };
-		0915735D1D54243300C9B907 /* biplaneFlying.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 091573561D54243300C9B907 /* biplaneFlying.mp3 */; };
-		0915735E1D54243300C9B907 /* bomb.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 091573571D54243300C9B907 /* bomb.mp3 */; };
-		0915735F1D54243300C9B907 /* bombDrop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 091573581D54243300C9B907 /* bombDrop.mp3 */; };
-		091573601D54243300C9B907 /* crash.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 091573591D54243300C9B907 /* crash.mp3 */; };
-		091573611D54243300C9B907 /* gunfire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0915735A1D54243300C9B907 /* gunfire.mp3 */; };
-		091573621D54243300C9B907 /* thump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0915735B1D54243300C9B907 /* thump.mp3 */; };
 		091573681D54385800C9B907 /* Bullet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 091573671D54385800C9B907 /* Bullet.sks */; };
 		0915736C1D54392D00C9B907 /* fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0915736A1D54392D00C9B907 /* fire.sks */; };
 		0915736D1D54392D00C9B907 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 0915736B1D54392D00C9B907 /* spark.png */; };
 		0915736F1D543D4100C9B907 /* Bomb.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0915736E1D543D4100C9B907 /* Bomb.sks */; };
-		091573711D54447C00C9B907 /* ching.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 091573701D54447C00C9B907 /* ching.mp3 */; };
 		091573731D5444A500C9B907 /* Star.sks in Resources */ = {isa = PBXBuildFile; fileRef = 091573721D5444A500C9B907 /* Star.sks */; };
+		093EABEA1D5455000069F120 /* Plane.sks in Resources */ = {isa = PBXBuildFile; fileRef = 093EABE91D5455000069F120 /* Plane.sks */; };
+		093EABED1D545F370069F120 /* Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 093EABEC1D545F370069F120 /* Images.atlas */; };
+		0960921F1D5453390085B693 /* bgMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 096092171D5453390085B693 /* bgMusic.mp3 */; };
+		096092201D5453390085B693 /* biplaneFlying.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 096092181D5453390085B693 /* biplaneFlying.mp3 */; };
+		096092211D5453390085B693 /* bomb.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 096092191D5453390085B693 /* bomb.mp3 */; };
+		096092221D5453390085B693 /* bombDrop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0960921A1D5453390085B693 /* bombDrop.mp3 */; };
+		096092231D5453390085B693 /* crash.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0960921B1D5453390085B693 /* crash.mp3 */; };
+		096092241D5453390085B693 /* gunfire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0960921C1D5453390085B693 /* gunfire.mp3 */; };
+		096092251D5453390085B693 /* star.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0960921D1D5453390085B693 /* star.mp3 */; };
+		096092261D5453390085B693 /* thump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0960921E1D5453390085B693 /* thump.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,21 +67,22 @@
 		091573361D540E1A00C9B907 /* SkyEscapeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkyEscapeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0915733A1D540E1A00C9B907 /* SkyEscapeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyEscapeUITests.swift; sourceTree = "<group>"; };
 		0915733C1D540E1A00C9B907 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0915734E1D540FDE00C9B907 /* SkyEscape.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SkyEscape.xcodeproj; path = "/Users/aboynton/FullSail/Current Class/1608 MGD/Repository/MGD-1606/SkyEscape/SkyEscape.xcodeproj"; sourceTree = "<absolute>"; };
 		091573521D5410DF00C9B907 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		091573551D54243300C9B907 /* bgMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgMusic.mp3; sourceTree = "<group>"; };
-		091573561D54243300C9B907 /* biplaneFlying.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = biplaneFlying.mp3; sourceTree = "<group>"; };
-		091573571D54243300C9B907 /* bomb.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bomb.mp3; sourceTree = "<group>"; };
-		091573581D54243300C9B907 /* bombDrop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bombDrop.mp3; sourceTree = "<group>"; };
-		091573591D54243300C9B907 /* crash.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crash.mp3; sourceTree = "<group>"; };
-		0915735A1D54243300C9B907 /* gunfire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gunfire.mp3; sourceTree = "<group>"; };
-		0915735B1D54243300C9B907 /* thump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = thump.mp3; sourceTree = "<group>"; };
 		091573671D54385800C9B907 /* Bullet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Bullet.sks; sourceTree = "<group>"; };
 		0915736A1D54392D00C9B907 /* fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = fire.sks; sourceTree = "<group>"; };
 		0915736B1D54392D00C9B907 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		0915736E1D543D4100C9B907 /* Bomb.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Bomb.sks; sourceTree = "<group>"; };
-		091573701D54447C00C9B907 /* ching.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ching.mp3; sourceTree = "<group>"; };
 		091573721D5444A500C9B907 /* Star.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Star.sks; sourceTree = "<group>"; };
+		093EABE91D5455000069F120 /* Plane.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Plane.sks; sourceTree = "<group>"; };
+		093EABEC1D545F370069F120 /* Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Images.atlas; sourceTree = "<group>"; };
+		096092171D5453390085B693 /* bgMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgMusic.mp3; sourceTree = "<group>"; };
+		096092181D5453390085B693 /* biplaneFlying.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = biplaneFlying.mp3; sourceTree = "<group>"; };
+		096092191D5453390085B693 /* bomb.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bomb.mp3; sourceTree = "<group>"; };
+		0960921A1D5453390085B693 /* bombDrop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bombDrop.mp3; sourceTree = "<group>"; };
+		0960921B1D5453390085B693 /* crash.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crash.mp3; sourceTree = "<group>"; };
+		0960921C1D5453390085B693 /* gunfire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gunfire.mp3; sourceTree = "<group>"; };
+		0960921D1D5453390085B693 /* star.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = star.mp3; sourceTree = "<group>"; };
+		0960921E1D5453390085B693 /* thump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = thump.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +186,7 @@
 				091573721D5444A500C9B907 /* Star.sks */,
 				091573671D54385800C9B907 /* Bullet.sks */,
 				0915736E1D543D4100C9B907 /* Bomb.sks */,
+				093EABE91D5455000069F120 /* Plane.sks */,
 				091573181D540E1A00C9B907 /* GameScene.sks */,
 			);
 			name = Scene.sks;
@@ -209,7 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				091573211D540E1A00C9B907 /* Assets.xcassets */,
-				091573631D54244600C9B907 /* Sound */,
+				093EABEC1D545F370069F120 /* Images.atlas */,
+				096092161D5453390085B693 /* Sound */,
 				091573261D540E1A00C9B907 /* Info.plist */,
 			);
 			name = Resources;
@@ -219,30 +224,9 @@
 			isa = PBXGroup;
 			children = (
 				091573521D5410DF00C9B907 /* SpriteKit.framework */,
-				0915734E1D540FDE00C9B907 /* SkyEscape.xcodeproj */,
 			);
 			name = Frameworks;
 			path = SkyEscape.xcodeproj;
-			sourceTree = "<group>";
-		};
-		091573501D5410B300C9B907 /* Products */ = {
-			isa = PBXGroup;
-			name = Products;
-			sourceTree = "<group>";
-		};
-		091573631D54244600C9B907 /* Sound */ = {
-			isa = PBXGroup;
-			children = (
-				091573551D54243300C9B907 /* bgMusic.mp3 */,
-				091573561D54243300C9B907 /* biplaneFlying.mp3 */,
-				091573571D54243300C9B907 /* bomb.mp3 */,
-				091573581D54243300C9B907 /* bombDrop.mp3 */,
-				091573591D54243300C9B907 /* crash.mp3 */,
-				091573701D54447C00C9B907 /* ching.mp3 */,
-				0915735A1D54243300C9B907 /* gunfire.mp3 */,
-				0915735B1D54243300C9B907 /* thump.mp3 */,
-			);
-			name = Sound;
 			sourceTree = "<group>";
 		};
 		091573691D54390400C9B907 /* Emmitter */ = {
@@ -252,6 +236,21 @@
 				0915736B1D54392D00C9B907 /* spark.png */,
 			);
 			name = Emmitter;
+			sourceTree = "<group>";
+		};
+		096092161D5453390085B693 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				096092171D5453390085B693 /* bgMusic.mp3 */,
+				096092181D5453390085B693 /* biplaneFlying.mp3 */,
+				096092191D5453390085B693 /* bomb.mp3 */,
+				0960921A1D5453390085B693 /* bombDrop.mp3 */,
+				0960921B1D5453390085B693 /* crash.mp3 */,
+				0960921C1D5453390085B693 /* gunfire.mp3 */,
+				0960921D1D5453390085B693 /* star.mp3 */,
+				0960921E1D5453390085B693 /* thump.mp3 */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,12 +346,6 @@
 			mainGroup = 0915730A1D540E1A00C9B907;
 			productRefGroup = 091573141D540E1A00C9B907 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 091573501D5410B300C9B907 /* Products */;
-					ProjectRef = 0915734E1D540FDE00C9B907 /* SkyEscape.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				091573121D540E1A00C9B907 /* SkyEscape */,
@@ -367,21 +360,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				091573711D54447C00C9B907 /* ching.mp3 in Resources */,
-				091573601D54243300C9B907 /* crash.mp3 in Resources */,
+				096092251D5453390085B693 /* star.mp3 in Resources */,
 				091573681D54385800C9B907 /* Bullet.sks in Resources */,
+				096092221D5453390085B693 /* bombDrop.mp3 in Resources */,
+				096092231D5453390085B693 /* crash.mp3 in Resources */,
+				096092261D5453390085B693 /* thump.mp3 in Resources */,
 				091573191D540E1A00C9B907 /* GameScene.sks in Resources */,
+				096092211D5453390085B693 /* bomb.mp3 in Resources */,
 				0915736F1D543D4100C9B907 /* Bomb.sks in Resources */,
 				0915736D1D54392D00C9B907 /* spark.png in Resources */,
-				0915735D1D54243300C9B907 /* biplaneFlying.mp3 in Resources */,
+				096092241D5453390085B693 /* gunfire.mp3 in Resources */,
+				093EABED1D545F370069F120 /* Images.atlas in Resources */,
 				091573251D540E1A00C9B907 /* LaunchScreen.storyboard in Resources */,
-				091573621D54243300C9B907 /* thump.mp3 in Resources */,
-				0915735E1D54243300C9B907 /* bomb.mp3 in Resources */,
-				0915735C1D54243300C9B907 /* bgMusic.mp3 in Resources */,
 				091573221D540E1A00C9B907 /* Assets.xcassets in Resources */,
-				091573611D54243300C9B907 /* gunfire.mp3 in Resources */,
+				093EABEA1D5455000069F120 /* Plane.sks in Resources */,
 				091573201D540E1A00C9B907 /* Main.storyboard in Resources */,
-				0915735F1D54243300C9B907 /* bombDrop.mp3 in Resources */,
+				0960921F1D5453390085B693 /* bgMusic.mp3 in Resources */,
+				096092201D5453390085B693 /* biplaneFlying.mp3 in Resources */,
 				0915736C1D54392D00C9B907 /* fire.sks in Resources */,
 				091573731D5444A500C9B907 /* Star.sks in Resources */,
 			);
