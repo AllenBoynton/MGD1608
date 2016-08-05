@@ -16,6 +16,7 @@
 		091573251D540E1A00C9B907 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091573231D540E1A00C9B907 /* LaunchScreen.storyboard */; };
 		091573301D540E1A00C9B907 /* SkyEscapeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0915732F1D540E1A00C9B907 /* SkyEscapeTests.swift */; };
 		0915733B1D540E1A00C9B907 /* SkyEscapeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0915733A1D540E1A00C9B907 /* SkyEscapeUITests.swift */; };
+		091573531D5410DF00C9B907 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 091573521D5410DF00C9B907 /* SpriteKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		091573361D540E1A00C9B907 /* SkyEscapeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkyEscapeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0915733A1D540E1A00C9B907 /* SkyEscapeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyEscapeUITests.swift; sourceTree = "<group>"; };
 		0915733C1D540E1A00C9B907 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0915734E1D540FDE00C9B907 /* SkyEscape.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SkyEscape.xcodeproj; path = "/Users/aboynton/FullSail/Current Class/1608 MGD/Repository/MGD-1606/SkyEscape/SkyEscape.xcodeproj"; sourceTree = "<absolute>"; };
+		091573521D5410DF00C9B907 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				091573531D5410DF00C9B907 /* SpriteKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +85,7 @@
 		0915730A1D540E1A00C9B907 = {
 			isa = PBXGroup;
 			children = (
+				0915734F1D540FDE00C9B907 /* Frameworks */,
 				091573151D540E1A00C9B907 /* SkyEscape */,
 				0915732E1D540E1A00C9B907 /* SkyEscapeTests */,
 				091573391D540E1A00C9B907 /* SkyEscapeUITests */,
@@ -179,6 +184,21 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		0915734F1D540FDE00C9B907 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				091573521D5410DF00C9B907 /* SpriteKit.framework */,
+				0915734E1D540FDE00C9B907 /* SkyEscape.xcodeproj */,
+			);
+			name = Frameworks;
+			path = SkyEscape.xcodeproj;
+			sourceTree = "<group>";
+		};
+		091573501D5410B300C9B907 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -272,6 +292,12 @@
 			mainGroup = 0915730A1D540E1A00C9B907;
 			productRefGroup = 091573141D540E1A00C9B907 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 091573501D5410B300C9B907 /* Products */;
+					ProjectRef = 0915734E1D540FDE00C9B907 /* SkyEscape.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				091573121D540E1A00C9B907 /* SkyEscape */,
@@ -545,6 +571,7 @@
 				091573411D540E1A00C9B907 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		091573421D540E1A00C9B907 /* Build configuration list for PBXNativeTarget "SkyEscapeTests" */ = {
 			isa = XCConfigurationList;
@@ -553,6 +580,7 @@
 				091573441D540E1A00C9B907 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		091573451D540E1A00C9B907 /* Build configuration list for PBXNativeTarget "SkyEscapeUITests" */ = {
 			isa = XCConfigurationList;
@@ -561,6 +589,7 @@
 				091573471D540E1A00C9B907 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
