@@ -18,12 +18,12 @@
 		0915733B1D540E1A00C9B907 /* SkyEscapeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0915733A1D540E1A00C9B907 /* SkyEscapeUITests.swift */; };
 		091573531D5410DF00C9B907 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 091573521D5410DF00C9B907 /* SpriteKit.framework */; };
 		091573681D54385800C9B907 /* Bullet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 091573671D54385800C9B907 /* Bullet.sks */; };
-		0915736C1D54392D00C9B907 /* fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0915736A1D54392D00C9B907 /* fire.sks */; };
+		0915736C1D54392D00C9B907 /* Gunfire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0915736A1D54392D00C9B907 /* Gunfire.sks */; };
 		0915736D1D54392D00C9B907 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 0915736B1D54392D00C9B907 /* spark.png */; };
 		0915736F1D543D4100C9B907 /* Bomb.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0915736E1D543D4100C9B907 /* Bomb.sks */; };
-		091573731D5444A500C9B907 /* Star.sks in Resources */ = {isa = PBXBuildFile; fileRef = 091573721D5444A500C9B907 /* Star.sks */; };
 		093EABEA1D5455000069F120 /* Plane.sks in Resources */ = {isa = PBXBuildFile; fileRef = 093EABE91D5455000069F120 /* Plane.sks */; };
 		093EABED1D545F370069F120 /* Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 093EABEC1D545F370069F120 /* Images.atlas */; };
+		093EABEF1D54F98E0069F120 /* Star.sks in Resources */ = {isa = PBXBuildFile; fileRef = 093EABEE1D54F98E0069F120 /* Star.sks */; };
 		0960921F1D5453390085B693 /* bgMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 096092171D5453390085B693 /* bgMusic.mp3 */; };
 		096092201D5453390085B693 /* biplaneFlying.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 096092181D5453390085B693 /* biplaneFlying.mp3 */; };
 		096092211D5453390085B693 /* bomb.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 096092191D5453390085B693 /* bomb.mp3 */; };
@@ -32,6 +32,9 @@
 		096092241D5453390085B693 /* gunfire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0960921C1D5453390085B693 /* gunfire.mp3 */; };
 		096092251D5453390085B693 /* star.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0960921D1D5453390085B693 /* star.mp3 */; };
 		096092261D5453390085B693 /* thump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0960921E1D5453390085B693 /* thump.mp3 */; };
+		09D75D4F1D550BBC00AF76C5 /* Smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 09D75D4E1D550BBC00AF76C5 /* Smoke.sks */; };
+		09D75D511D550BE800AF76C5 /* Explode.sks in Resources */ = {isa = PBXBuildFile; fileRef = 09D75D501D550BE800AF76C5 /* Explode.sks */; };
+		09D75D531D5515BF00AF76C5 /* SmokeTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 09D75D521D5515BF00AF76C5 /* SmokeTrail.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,12 +72,12 @@
 		0915733C1D540E1A00C9B907 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		091573521D5410DF00C9B907 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		091573671D54385800C9B907 /* Bullet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Bullet.sks; sourceTree = "<group>"; };
-		0915736A1D54392D00C9B907 /* fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = fire.sks; sourceTree = "<group>"; };
+		0915736A1D54392D00C9B907 /* Gunfire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Gunfire.sks; sourceTree = "<group>"; };
 		0915736B1D54392D00C9B907 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		0915736E1D543D4100C9B907 /* Bomb.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Bomb.sks; sourceTree = "<group>"; };
-		091573721D5444A500C9B907 /* Star.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Star.sks; sourceTree = "<group>"; };
 		093EABE91D5455000069F120 /* Plane.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Plane.sks; sourceTree = "<group>"; };
 		093EABEC1D545F370069F120 /* Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Images.atlas; sourceTree = "<group>"; };
+		093EABEE1D54F98E0069F120 /* Star.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Star.sks; sourceTree = "<group>"; };
 		096092171D5453390085B693 /* bgMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgMusic.mp3; sourceTree = "<group>"; };
 		096092181D5453390085B693 /* biplaneFlying.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = biplaneFlying.mp3; sourceTree = "<group>"; };
 		096092191D5453390085B693 /* bomb.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bomb.mp3; sourceTree = "<group>"; };
@@ -83,6 +86,9 @@
 		0960921C1D5453390085B693 /* gunfire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gunfire.mp3; sourceTree = "<group>"; };
 		0960921D1D5453390085B693 /* star.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = star.mp3; sourceTree = "<group>"; };
 		0960921E1D5453390085B693 /* thump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = thump.mp3; sourceTree = "<group>"; };
+		09D75D4E1D550BBC00AF76C5 /* Smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Smoke.sks; sourceTree = "<group>"; };
+		09D75D501D550BE800AF76C5 /* Explode.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explode.sks; sourceTree = "<group>"; };
+		09D75D521D5515BF00AF76C5 /* SmokeTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SmokeTrail.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +189,7 @@
 		0915734A1D540E8400C9B907 /* Scene.sks */ = {
 			isa = PBXGroup;
 			children = (
-				091573721D5444A500C9B907 /* Star.sks */,
+				093EABEE1D54F98E0069F120 /* Star.sks */,
 				091573671D54385800C9B907 /* Bullet.sks */,
 				0915736E1D543D4100C9B907 /* Bomb.sks */,
 				093EABE91D5455000069F120 /* Plane.sks */,
@@ -232,8 +238,11 @@
 		091573691D54390400C9B907 /* Emmitter */ = {
 			isa = PBXGroup;
 			children = (
-				0915736A1D54392D00C9B907 /* fire.sks */,
+				0915736A1D54392D00C9B907 /* Gunfire.sks */,
 				0915736B1D54392D00C9B907 /* spark.png */,
+				09D75D4E1D550BBC00AF76C5 /* Smoke.sks */,
+				09D75D501D550BE800AF76C5 /* Explode.sks */,
+				09D75D521D5515BF00AF76C5 /* SmokeTrail.sks */,
 			);
 			name = Emmitter;
 			sourceTree = "<group>";
@@ -360,10 +369,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09D75D531D5515BF00AF76C5 /* SmokeTrail.sks in Resources */,
 				096092251D5453390085B693 /* star.mp3 in Resources */,
 				091573681D54385800C9B907 /* Bullet.sks in Resources */,
 				096092221D5453390085B693 /* bombDrop.mp3 in Resources */,
 				096092231D5453390085B693 /* crash.mp3 in Resources */,
+				09D75D511D550BE800AF76C5 /* Explode.sks in Resources */,
 				096092261D5453390085B693 /* thump.mp3 in Resources */,
 				091573191D540E1A00C9B907 /* GameScene.sks in Resources */,
 				096092211D5453390085B693 /* bomb.mp3 in Resources */,
@@ -376,9 +387,10 @@
 				093EABEA1D5455000069F120 /* Plane.sks in Resources */,
 				091573201D540E1A00C9B907 /* Main.storyboard in Resources */,
 				0960921F1D5453390085B693 /* bgMusic.mp3 in Resources */,
+				09D75D4F1D550BBC00AF76C5 /* Smoke.sks in Resources */,
 				096092201D5453390085B693 /* biplaneFlying.mp3 in Resources */,
-				0915736C1D54392D00C9B907 /* fire.sks in Resources */,
-				091573731D5444A500C9B907 /* Star.sks in Resources */,
+				0915736C1D54392D00C9B907 /* Gunfire.sks in Resources */,
+				093EABEF1D54F98E0069F120 /* Star.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +515,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				"Texture Atlas Maximum Size" = 4096x4096;
 			};
 			name = Debug;
 		};
@@ -541,6 +554,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				"Texture Atlas Maximum Size" = 4096x4096;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
