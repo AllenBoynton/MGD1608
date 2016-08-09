@@ -40,6 +40,12 @@ class GameViewController: UIViewController {
         } else {
             return .All
         }
+        
+//        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+//            return .AllButUpsideDown
+//        } else {
+//            return .All
+//        }
     }
 
     override func prefersStatusBarHidden() -> Bool {
