@@ -36,7 +36,29 @@ var smokeTrail : SKEmitterNode!
 var explosion  : SKEmitterNode!
 
 
+// Access other swift texture files
+protocol GameSprite {
+    var textureAtlas: SKTextureAtlas { get set }
+    func spawn(parentNode: SKNode, position: CGPoint, size:
+        CGSize)
+    
+    func onTap()
+}
+
 class GameScene: SKScene, SKPhysicsContactDelegate, UIAccelerometerDelegate {
+    
+    let world = SKNode()
+    let background = Background()
+    let midground = Midground()
+    let foreground = Foreground()
+    let star = Star()
+    let myPlane = MyPlane()
+    let bullet = Bullet()
+    let bomb = Bomb()
+    let enemies = Enemies()
+    let enemyFire = EnemyFire()
+    let enemyMissiles = EnemyMissiles()
+    
     
     // The scroll version of the nodes will become a scrolling, repeating backround
     
@@ -44,31 +66,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIAccelerometerDelegate {
     var myBackground: SKTexture!
     
     // Calls the sprite a scene object
-    var myMidground1 = SKSpriteNode()
-    var myMidground2 = SKSpriteNode()
-    var ground1 = SKSpriteNode()
-    var ground2 = SKSpriteNode()
+    var midground1 = SKSpriteNode()
+    var midground2 = SKSpriteNode()
+    var foreground1 = SKSpriteNode()
+    var foreground2 = SKSpriteNode()
     var mtHeight = CGFloat(200)
     
-    // Nodes for plane animation
-    var MyPlane = SKSpriteNode()
-    var PlaneAtlas = SKTextureAtlas()
-    var PlaneArray = [SKTexture]()
-    var PlaneIsActive = Bool(false)
-    
     // Makes sprite an object
-    var star      : SKSpriteNode! // Sky objects
-    var badCloud  : SKSpriteNode!
+    var badCloud  =
+        SKSpriteNode(imageNamed: "badCloud.png")
     
-    var bullet    : SKSpriteNode! // Fire power
-    var bomb      : SKSpriteNode!
-    var missile   : SKSpriteNode!
-    var enemyFire : SKSpriteNode!
-    
-    var enemy1    : SKSpriteNode! // Enemies
-    var enemy2    : SKSpriteNode!
-    var enemy3    : SKSpriteNode!
-    var tank      : SKSpriteNode!
+    // Enemies
+    var enemy1 = SKSpriteNode()
+    var enemy2 = SKSpriteNode()
+    var enemy3 = SKSpriteNode()
+    var tank   = SKSpriteNode()
     let enemyArray: [SKSpriteNode] = []
     
     // Location for touch screen
@@ -92,7 +104,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIAccelerometerDelegate {
     var airplaneP51Sound = SKAudioNode()
     
     // Game metering GUI
-//    var start = false
     var score = 0
     var starCount = 0
     var health = 10
@@ -116,48 +127,35 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIAccelerometerDelegate {
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        
-        // Calls the sprite to its child node name
-        badCloud = (self.childNodeWithName("badCloud") as! SKSpriteNode)
-//        enemyFire = (self.childNodeWithName("enemyFire") as! SKSpriteNode)
-        
-        // Calls the sprite from its custom scene file
-        star.removeFromParent()
-        star = SKScene(fileNamed: "Star")!.childNodeWithName("star") as! SKSpriteNode
-        bullet = SKScene(fileNamed: "Bullet")!.childNodeWithName("bullet") as! SKSpriteNode
-//        bomb = SKScene(fileNamed: "Bomb")!.childNodeWithName("bomb1") as! SKSpriteNode
-//        missile = SKScene(fileNamed: "Missile")!.childNodeWithName("missile")! as! SKSpriteNode
-        ground1 = SKScene(fileNamed: "Landscape")!.childNodeWithName("landscape") as! SKSpriteNode
-        ground2 = SKScene(fileNamed: "Landscape")!.childNodeWithName("landscape") as! SKSpriteNode
-        enemy1  = SKScene(fileNamed: "Enemy1")!.childNodeWithName("enemy1") as! SKSpriteNode
-        enemy2  = SKScene(fileNamed: "Enemy2")!.childNodeWithName("enemy2") as! SKSpriteNode
-        enemy3  = SKScene(fileNamed: "Enemy3")!.childNodeWithName("enemy3") as! SKSpriteNode
-        tank    = SKScene(fileNamed: "Tank")!.childNodeWithName("tank") as! SKSpriteNode
-
+        // Sets the physics delegate and physics body
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
         self.physicsWorld.contactDelegate = self // Physics delegate set
         
         // Calling func for animated background
-        createBackground()
+        background.createBackground()
         
         // Adding a midground
-        createMidground()
+        midground.createMidground()
         
         // Adding the foreground
-        createForeground()
+        foreground.createForeground()
         
         // Add user's bi-plane
-        animateMyPlane()
+        myPlane.animateMyPlane()
         
         // Spawning stars
-        generateStars()
+        star.createStars()
         
         // Initilize values and labels
-//        initializeValues()
+        initializeValues()
+        
+        // Set bullet spawn
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(GameScene.SpawnBullets), userInfo: nil, repeats: true)
         
         // Set enemy spawn intervals
         enemyTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(GameScene.SpawnSkyEnemy), userInfo: nil, repeats: true)
         enemyTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: #selector(GameScene.SpawnTank), userInfo: nil, repeats: true)
+        
         
         // Created movement of plane by use of accelerometer
 //        if motionManager.accelerometerAvailable == true {
@@ -211,8 +209,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIAccelerometerDelegate {
         for touch: AnyObject in touches {
             let location = (touch as! UITouch).locationInNode(self)
             
-            MyPlane.position.y = location.y // Allows a tap to touch on the y axis
-            MyPlane.position.x = location.x
+            myPlane.position.y = location.y // Allows a tap to touch on the y axis
+            myPlane.position.x = location.x
             
             if let theName = self.nodeAtPoint(location).name {
                 if theName == "Enemy" {
@@ -242,8 +240,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIAccelerometerDelegate {
         for touch: AnyObject in touches {
             let location = (touch as! UITouch).locationInNode(self)
             
-            MyPlane.position.y = location.y // Allows a tap to touch on the y axis
-            MyPlane.position.x = location.x
+            myPlane.position.y = location.y // Allows a tap to touch on the y axis
+            myPlane.position.x = location.x
                         if let theName = self.nodeAtPoint(location).name {
                             if theName == "Enemy" {
                                 self.removeChildrenInArray([self.nodeAtPoint(location)])
@@ -269,7 +267,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIAccelerometerDelegate {
         bullet.physicsBody?.collisionBitMask = starMask | enemy1Mask | enemy2Mask | enemy3Mask | tankMask
         
         // MyPlane collisions
-        MyPlane.physicsBody?.collisionBitMask = groundMask | cloudMask | mtMask | missileMask | enemyMask
+        myPlane.physicsBody?.collisionBitMask = groundMask | cloudMask | mtMask | missileMask | enemyMask
         
         // Which ones react to a collision
         
@@ -277,7 +275,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIAccelerometerDelegate {
         bullet.physicsBody?.contactTestBitMask = bullet.physicsBody!.collisionBitMask | starMask | enemy1Mask | enemy2Mask | enemy3Mask | tankMask | missileMask
         
         // MyPlane's contacts
-        MyPlane.physicsBody?.contactTestBitMask = MyPlane.physicsBody!.collisionBitMask | groundMask | mtMask | enemy1Mask | enemy2Mask | enemy3Mask | tankMask | missileMask | enemyMask
+        myPlane.physicsBody?.contactTestBitMask = myPlane.physicsBody!.collisionBitMask | groundMask | mtMask | enemy1Mask | enemy2Mask | enemy3Mask | tankMask | missileMask | enemyMask
     }
     
     
@@ -288,31 +286,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIAccelerometerDelegate {
         /* Called before each frame is rendered */
         
         // Animating midground
-        myMidground1.position = CGPointMake(myMidground1.position.x - 4, 400)
-        myMidground2.position = CGPointMake(myMidground2.position.x - 4, myMidground2.position.y)
+        midground1.position = CGPointMake(midground1.position.x - 4, 600)
+        midground2.position = CGPointMake(midground2.position.x - 4, midground2.position.y)
         
-        if (myMidground1.position.x < -myMidground1.size.width + 400 / 2){
-            myMidground1.position = CGPointMake(myMidground2.position.x + myMidground2.size.width * 4, mtHeight)
+        if (midground1.position.x < -midground1.size.width + 400 / 2){
+            midground1.position = CGPointMake(midground2.position.x + midground2.size.width * 4, mtHeight)
         }
         
-        if (myMidground2.position.x < -myMidground2.size.width + 400 / 2) {
-            myMidground2.position = CGPointMake(myMidground1.position.x + myMidground1.size.width * 4, mtHeight)
+        if (midground2.position.x < -midground2.size.width + 400 / 2) {
+            midground2.position = CGPointMake(midground1.position.x + midground1.size.width * 4, mtHeight)
         }
         
-        if (myMidground1.position.x < self.frame.width/2) {
-            mtHeight = randomNumbers(400, secondNum: 240)
+        if (midground1.position.x < self.frame.width/2) {
+            mtHeight = randomNumbers(600, secondNum: 240)
         }
         
         // Animating foreground
-        ground1.position = CGPointMake(ground1.position.x - 6, ground1.position.y)
-        ground2.position = CGPointMake(ground2.position.x - 6, ground2.position.y)
+        foreground1.position = CGPointMake(foreground1.position.x - 6, foreground1.position.y)
+        foreground2.position = CGPointMake(foreground2.position.x - 6, foreground2.position.y)
         
-        if (ground1.position.x < -ground1.size.width / 2) {
-            ground1.position = CGPointMake(ground2.position.x + ground2.size.width, ground1.position.y)
+        if (foreground1.position.x < -foreground1.size.width / 2) {
+            foreground1.position = CGPointMake(foreground2.position.x + foreground2.size.width, foreground1.position.y)
         }
         
-        if (ground2.position.x < -ground2.size.width / 2) {
-            ground2.position = CGPointMake(ground1.position.x + ground1.size.width, ground2.position.y)
+        if (foreground2.position.x < -foreground2.size.width / 2) {
+            foreground2.position = CGPointMake(foreground1.position.x + foreground1.size.width, foreground2.position.y)
         }
 
         // Planes movement actions by accelerometer
@@ -338,7 +336,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIAccelerometerDelegate {
             timeBetweenEnemies = timeBetweenEnemies/moveFactor
         }
         checkIfPlaneGetsAcross()
-        checkIfGameIsOver()
+//        checkIfGameIsOver()
     }
     
     
@@ -395,7 +393,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIAccelerometerDelegate {
         else if other.categoryBitMask == cloudMask {
             self.didHitCloudNode(other)
         }
-        
     }
     
     
@@ -480,177 +477,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIAccelerometerDelegate {
     /********************************* Custom Functions *********************************/
     // MARK: - Custom Functions
     
-    // Adding scrolling background
-    func createBackground() {
-        myBackground = SKTexture(imageNamed: "cartoonCloudsBG") // Main Background
-        
-        for i in 0 ... 1 {
-            let background = SKSpriteNode(texture: myBackground)
-            background.zPosition = 0
-            background.anchorPoint = CGPointZero
-            background.position = CGPoint(x: (myBackground.size().width * CGFloat(i)) - CGFloat(1 * i), y: 0)
-            addChild(background)
-            
-            // Animation setup for background
-            let moveLeft = SKAction.moveByX(-myBackground.size().width, y: 0, duration: 30)
-            let moveReset = SKAction.moveByX(myBackground.size().width, y: 0, duration: 0)
-            let moveLoop = SKAction.sequence([moveLeft, moveReset])
-            let moveForever = SKAction.repeatActionForever(moveLoop)
-            
-            background.runAction(moveForever)
-        }
-    }
-    
-    // Adding scrolling midground
-    func createMidground() {
-        myMidground1 = SKSpriteNode(imageNamed: "mountain")
-        myMidground2 = SKSpriteNode(imageNamed: "mountain")
-        
-        myMidground1.setScale(6.0)
-        myMidground1.position = CGPointMake(800, 600)
-        myMidground1.size.height = myMidground1.size.height
-        myMidground1.size.width = myMidground1.size.width
-        
-        // Physics bitmask for mountains
-        myMidground1.physicsBody?.categoryBitMask = mtMask
-        myMidground1.physicsBody?.contactTestBitMask = MyPlaneMask
-        
-        myMidground2.position = CGPointMake(1600, 600)
-        myMidground2.setScale(6.0)
-        myMidground2.size.height = myMidground2.size.height
-        myMidground2.size.width = myMidground2.size.width
-        
-        addChild(self.myMidground1)
-        addChild(self.myMidground2)
-        
-        // Physics bitmask for mountains
-        myMidground2.physicsBody?.categoryBitMask = mtMask
-        myMidground2.physicsBody?.contactTestBitMask = MyPlaneMask
-        
-        myMidground1.shadowCastBitMask = 1
-        myMidground2.shadowCastBitMask = 1
-        
-        // Create physics body
-        myMidground1.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "mountain"), size: self.myMidground1.size)
-
-        myMidground2.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "mountain"), size: self.myMidground2.size)
-
-        myMidground1.physicsBody?.dynamic = false
-        myMidground2.physicsBody?.dynamic = false
-    }
-    
-    // RNG for mountain height
     func randomNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat {
         return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum - secondNum) + min(firstNum, secondNum)
     }
-    
-    // Adding scrolling foreground
-    func createForeground() {
-        ground1 = SKSpriteNode(imageNamed: "landscape")
-        ground2 = SKSpriteNode(imageNamed: "landscape")
-        ground1.anchorPoint = CGPointZero;
-        ground1.position = CGPointMake(0, 0);
-        ground2.anchorPoint = CGPointZero;
-        ground2.position = CGPointMake(ground1.size.width-1, 0)
-        
-        self.addChild(ground1)
-        self.addChild(ground2)
-        
-        // Create physics body
-        ground1.physicsBody = SKPhysicsBody(edgeLoopFromRect: ground1.frame)
-        ground2.physicsBody = SKPhysicsBody(edgeLoopFromRect: ground1.frame)
-    }
-    
-    // Animation atlas of MyPlane
-    func animateMyPlane() {
-        PlaneAtlas = SKTextureAtlas(named:"Images")
-        
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(GameScene.SpawnBullets), userInfo: nil, repeats: true)
-        
-        for i in 1...PlaneAtlas.textureNames.count { // Iterates loop for plane animation
-            let Plane = "myPlane\(i).png"
-            PlaneArray.append(SKTexture(imageNamed: Plane))
-        }
-        
-        // Set the planes initial position
-        MyPlane = SKSpriteNode(imageNamed: PlaneAtlas.textureNames[0])
-        MyPlane.setScale(0.2)
-        MyPlane.zPosition = 6
-        MyPlane.position = CGPointMake(self.size.width / 5, self.size.height / 2 )
-        self.addChild(MyPlane)
-        
-        // Define and repeat animation
-        MyPlane.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(PlaneArray, timePerFrame: 0.05)))
-        
-        // Create smoke trail for myPlane
-        smokeTrail = SKEmitterNode(fileNamed: "SmokeTrail")!
-        
-        //the x & y-position needs to be slightly behind the plane
-        smokeTrail.zPosition = 6
-        smokeTrail.position = CGPointMake(MyPlane.position.x - 120, MyPlane.position.y - 25)
-        smokeTrail.setScale(2.0)
-        
-        // Influenced by plane's movement
-        smokeTrail.targetNode = self.scene
-        self.addChild(smokeTrail)
-    }
-    
-    // Set physics to myPlane
-    func MyPlanePhysics() {
-        MyPlane.physicsBody?.linearDamping = 1.1
-        MyPlane.physicsBody?.restitution = 0
-        
-        MyPlane.physicsBody?.categoryBitMask = MyPlaneMask
-        MyPlane.physicsBody?.contactTestBitMask = mtMask
-        
-        PlaneIsActive = true
-    }
-    
-    // Spawn bullets fired
-    func SpawnBullets() {
-        bullet.zPosition = 6
-        bullet.position = CGPointMake(MyPlane.position.x + 75, MyPlane.position.y)
-        let action = SKAction.moveToX(self.size.width + 30, duration: 50.0)
-        bullet.runAction(SKAction.repeatActionForever(action))
-        bullet.removeFromParent()
-        self.addChild(bullet)
-        
-        addGunfireToPlane()
-    }
-    
-    // Spawn bombs dropped
-//    func SpawnBombs() {
-//        bomb.zPosition = 6
-//        bomb.position = CGPointMake(MyPlane.position.x, MyPlane.position.y)
-//        let action = SKAction.moveToY(self.size.height + 30, duration: 3.0)
-//        bomb.runAction(SKAction.repeatActionForever(action))
-//        bomb.removeFromParent()
-//        self.addChild(bomb)
-//    }
-    
-    // Add emitter of fire when bullets are fired
-    func addGunfireToPlane() {
-        // The plane will emit gunfire effect
-        gunfire = SKEmitterNode(fileNamed: "Gunfire")!
-        
-        //the y-position needs to be slightly in front of the plane
-        gunfire.zPosition = 6
-        gunfire.position = CGPointMake(MyPlane.position.x + 75, MyPlane.position.y)
-        gunfire.setScale(1.5)
-        
-        // Influenced by plane's movement
-        gunfire.targetNode = self.scene
-        self.addChild(gunfire)
-    }
-    
+
     // Spawns an enemy
     func SpawnSkyEnemy() {
         // Calculate random spawn points for air enemies
         let minValue = Int(self.size.height / 8)
-        let maxValue = -30
+        let maxValue = Int(self.size.height - 30)
         let spawnPoint = UInt32(maxValue - minValue)
         
-        // Generate a random enemy selector
+        // Generate a random enemy array
         let enemyArray = [enemy1, enemy2, enemy3]
         // Generate a random index
         let randomIndex = Int(arc4random_uniform(UInt32(enemyArray.count)))
@@ -672,71 +510,42 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIAccelerometerDelegate {
         self.addChild(tank)
     }
     
-    // Generate spawning of stars - random in 5 sec increments
-    func generateStars() {
-        // will stop spawning depending on numb created
-        if (self.actionForKey("spawning") != nil){
-            return
-        }
-        
-        let timer = SKAction.waitForDuration(5)
-        let xPos = randomNumbers(0, secondNum: frame.width)
-        
-        let spawn = SKAction.runBlock {
-            let spawnLocation = CGPointMake(CGFloat(xPos), self.frame.size.height / 2)
-            self.star.position = spawnLocation
-        }
-        star.removeFromParent()
-        self.addChild(star)
-        self.addChild(star)
-        self.addChild(star)
-        
-        let sequence = SKAction.sequence([timer, spawn])
-        star.runAction(SKAction.repeatActionForever(sequence) , withKey: "spawning")
-        
-        // Attributes for star to repeat an action
-        let degrees = -180.0
-        let rads = degrees * M_PI / 180.0
-        let action = SKAction.rotateByAngle(CGFloat(rads), duration: 1.0) //Rotation 1way
-        star.runAction(SKAction.repeatActionForever(action)) // Runs sequence action forever
-    }
-
     // Sets the initial values for our variables
-//    func initializeValues(){
-//        self.removeAllChildren()
-//        
-//        score = 0
-//        gameOver = false
-//        currentNumberOfEnemies = 0
-//        timeBetweenEnemies = 1.0
-//        enemySpeed = 5.0
-//        health = 10
-//        nextTime = NSDate()
-//        now = NSDate()
-//        
-//        healthLabel = SKLabelNode(fontNamed: "Optima-ExtraBlack")
-//        healthLabel.text = "Health: \(health)"
-//        healthLabel.fontSize = 30
-//        healthLabel.fontColor = SKColor.blackColor()
-//        healthLabel.position = CGPoint(x: frame.minX + 100, y: frame.minY + 40)
-//        
-//        scoreLabel = SKLabelNode(fontNamed: "Optima-ExtraBlack")
-//        scoreLabel.text = "Score: \(score)"
-//        scoreLabel.fontSize = 30
-//        scoreLabel.fontColor = SKColor.blackColor()
-//        scoreLabel.position = CGPoint(x: frame.maxX - 100, y: frame.maxY - 40)
-//        scoreLabel.horizontalAlignmentMode = .Right
-//        
-//        gameOverLabel = SKLabelNode(fontNamed: "Optima-ExtraBlack")
-//        gameOverLabel.text = "GAME OVER"
-//        gameOverLabel.fontSize = 80
-//        gameOverLabel.fontColor = SKColor.blackColor()
-//        gameOverLabel.position = CGPoint(x: CGRectGetMinX(self.frame)/2, y: (CGRectGetMinY(self.frame)/2))
-//        
-//        self.addChild(healthLabel)
-//        self.addChild(scoreLabel)
-//        self.addChild(gameOverLabel)
-//    }
+    func initializeValues(){
+        self.removeAllChildren()
+        
+        score = 0
+        gameOver = false
+        currentNumberOfEnemies = 0
+        timeBetweenEnemies = 1.0
+        enemySpeed = 5.0
+        health = 10
+        nextTime = NSDate()
+        now = NSDate()
+        
+        healthLabel = SKLabelNode(fontNamed: "Optima-ExtraBlack")
+        healthLabel.text = "Health: \(health)"
+        healthLabel.fontSize = 40
+        healthLabel.fontColor = SKColor.blackColor()
+        healthLabel.position = CGPoint(x: frame.minX + 100, y: frame.minY + 40)
+        
+        scoreLabel = SKLabelNode(fontNamed: "Optima-ExtraBlack")
+        scoreLabel.text = "Score: \(score)"
+        scoreLabel.fontSize = 40
+        scoreLabel.fontColor = SKColor.blackColor()
+        scoreLabel.position = CGPoint(x: frame.maxX - 100, y: frame.maxY - 40)
+        scoreLabel.horizontalAlignmentMode = .Right
+        
+        gameOverLabel = SKLabelNode(fontNamed: "Optima-ExtraBlack")
+        gameOverLabel.text = "GAME OVER"
+        gameOverLabel.fontSize = 80
+        gameOverLabel.fontColor = SKColor.blackColor()
+        gameOverLabel.position = CGPoint(x: CGRectGetMinX(self.frame)/2, y: (CGRectGetMinY(self.frame)/2))
+        
+        self.addChild(healthLabel)
+        self.addChild(scoreLabel)
+        self.addChild(gameOverLabel)
+    }
     
     // Check if the game is over by looking at our health
     // Shows game over screen if needed
@@ -749,23 +558,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIAccelerometerDelegate {
 //    }
     
     // Checks if an enemy plane reaches the other side of our screen
-//    func checkIfPlaneGetsAcross(){
-//        for child in self.children {
-//            if(child.position.x == 0){
-//                self.removeChildrenInArray([child])
-//                currentNumberOfEnemies-=1
-//                health -= 1
-//            }
-//        }
-//    }
+    func checkIfPlaneGetsAcross(){
+        for child in self.children {
+            if(child.position.x == 0){
+                self.removeChildrenInArray([child])
+                currentNumberOfEnemies-=1
+                health -= 1
+            }
+        }
+    }
     
-    // Displays the game over screen
+//    // Displays the game over screen
 //    func showGameOverScreen(){
 //        gameOverLabel = SKLabelNode(fontNamed:"System")
 //        gameOverLabel.text = "Game Over! Score: \(score)"
 //        gameOverLabel.fontColor = SKColor.redColor()
-//        gameOverLabel.fontSize = 65;
-//        gameOverLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
+//        gameOverLabel.fontSize = 65
+//        gameOverLabel.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame));
 //        self.addChild(gameOverLabel)
 //    }
 }

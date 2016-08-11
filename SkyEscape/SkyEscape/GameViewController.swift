@@ -24,7 +24,7 @@ class GameViewController: UIViewController {
             skView.ignoresSiblingOrder = false
             
             /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFit
+            scene.scaleMode = .AspectFill
             
             skView.presentScene(scene)
         }
@@ -36,7 +36,7 @@ class GameViewController: UIViewController {
 
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return .AllButUpsideDown
+            return .Landscape
         } else {
             return .All
         }
