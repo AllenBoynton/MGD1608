@@ -8,43 +8,35 @@
 
 import SpriteKit
 
-// A new class, inheriting from SKSpriteNode and
-// adhering to the GameSprite protocol
+/* A new class, inheriting from SKSpriteNode and
+ adhering to the GameSprite protocol */
 
-//class Tank: SKSpriteNode {
-//    
-//    var enemyTimer = NSTimer()
-//    
-//    // Spawn enemies
-//    var textureAtlas: SKTextureAtlas =
-//        SKTextureAtlas(named:"goods.atlas")
-//    
-//    let tank = SKScene(fileNamed: "Tank")!.childNodeWithName("tank") as! SKSpriteNode
-//    
-//    // Generate spawning of tank
-//    func SpawnTank() {
-//        // Generate ground tank - it can't fly!! ;)
-//        let minTank = Int(self.size.width / 1.5)
-//        let maxTank = Int(self.size.width - 20)
-//        let tankSpawnPoint = UInt32(maxTank - minTank)
-//        tank.position = CGPoint(x: CGFloat(arc4random_uniform(tankSpawnPoint)), y: self.size.height)
-//        
-//        tank.removeFromParent()
-//        self.addChild(tank)
-//        
-//        // Set enemy tank spawn intervals
-//        enemyTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: #selector(Tank.SpawnTank), userInfo: nil, repeats: true)
-//        
-//        // Add sound
-//        tankFiringSound = SKAudioNode(fileNamed: "tankFiring")!
-//        tankFiringSound.runAction(SKAction.play())
-//        tankFiringSound.autoplayLooped = false
-//        
-//        self.addChild(tankFiringSound)
-//    }
-//    // Implement onTap to adhere to the protocol:
-//    func onTap() {}
-//}
+class Tank: SKSpriteNode, GameSprite {
+    var textureAtlas: SKTextureAtlas = SKTextureAtlas(named:"weapons.atlas")
+    
+    // Generate ground tank - it can't fly!! ;)
+    func spawn(parentNode:SKNode, position: CGPoint, size: CGSize = CGSize(width: 150, height: 70)) {
+        parentNode.addChild(self)
+        self.position = position
+        self.size = size
+        self.physicsBody?.affectedByGravity = false
+        self.physicsBody?.collisionBitMask = PhysicsCategory.Enemy
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.Player | PhysicsCategory.MyBullets | PhysicsCategory.Enemy | PhysicsCategory.EnemyFire
+        self.physicsBody?.dynamic = true
+
+        self.texture = textureAtlas.textureNamed("tank.png")
+        
+        // Add sound
+        tankFiringSound = SKAudioNode(fileNamed: "tankFiring")
+        tankFiringSound.runAction(SKAction.play())
+        tankFiringSound.autoplayLooped = false
+        
+        self.addChild(tankFiringSound)
+    }
+    
+    // Implement onTap to adhere to the protocol:
+    func onTap() {}
+}
 
 
 
@@ -178,7 +170,7 @@ import SpriteKit
 
 //    // Displays the game over screen
 //    func showGameOverScreen(){
-//        gameOverLabel = SKLabelNode(fontNamed:"System")
+//        gameOverLabel = SKLabelNode(fontNamed: "System")
 //        gameOverLabel.text = "Game Over! Score: \(score)"
 //        gameOverLabel.fontColor = SKColor.redColor()
 //        gameOverLabel.fontSize = 65

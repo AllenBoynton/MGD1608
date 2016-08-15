@@ -26,8 +26,6 @@
 		091573531D5410DF00C9B907 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 091573521D5410DF00C9B907 /* SpriteKit.framework */; };
 		0915736C1D54392D00C9B907 /* Gunfire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0915736A1D54392D00C9B907 /* Gunfire.sks */; };
 		0915736D1D54392D00C9B907 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 0915736B1D54392D00C9B907 /* spark.png */; };
-		09217F3A1D5A3AA000BC070F /* Tank.sks in Resources */ = {isa = PBXBuildFile; fileRef = 09217F391D5A3AA000BC070F /* Tank.sks */; };
-		092282601D5A4AEA001405BB /* Missile.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0922825F1D5A4AEA001405BB /* Missile.sks */; };
 		093EABED1D545F370069F120 /* Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 093EABEC1D545F370069F120 /* Images.atlas */; };
 		0948E8061D5CEDBC004F7E9F /* Coin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0948E8021D5CEDBC004F7E9F /* Coin.mp3 */; };
 		0948E8071D5CEDBC004F7E9F /* Hurt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0948E8031D5CEDBC004F7E9F /* Hurt.mp3 */; };
@@ -47,6 +45,19 @@
 		09A3F08C1D5D595500A54FBF /* thunder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 09A3F08B1D5D595500A54FBF /* thunder.mp3 */; };
 		09A3F08E1D5D61C000A54FBF /* Rain.sks in Resources */ = {isa = PBXBuildFile; fileRef = 09A3F08D1D5D61C000A54FBF /* Rain.sks */; };
 		09A3F0961D5E6D8D00A54FBF /* goods.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 09A3F0951D5E6D8D00A54FBF /* goods.atlas */; };
+		09A3F0981D5FB2FD00A54FBF /* BattleTheme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 09A3F0971D5FB2FD00A54FBF /* BattleTheme.mp3 */; };
+		09A3F09A1D5FE8F500A54FBF /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A3F0991D5FE8F500A54FBF /* Star.swift */; };
+		09A3F09C1D5FE95D00A54FBF /* GameSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A3F09B1D5FE95D00A54FBF /* GameSprite.swift */; };
+		09A3F09E1D5FEA1000A54FBF /* Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A3F09D1D5FEA1000A54FBF /* Coins.swift */; };
+		09A3F0A31D5FF76900A54FBF /* ground.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 09A3F09F1D5FF76900A54FBF /* ground.atlas */; };
+		09A3F0A41D5FF76900A54FBF /* enemies.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 09A3F0A01D5FF76900A54FBF /* enemies.atlas */; };
+		09A3F0A51D5FF76900A54FBF /* planes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 09A3F0A11D5FF76900A54FBF /* planes.atlas */; };
+		09A3F0A61D5FF76900A54FBF /* weapons.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 09A3F0A21D5FF76900A54FBF /* weapons.atlas */; };
+		09A3F0A81D60062A00A54FBF /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A3F0A71D60062A00A54FBF /* Ground.swift */; };
+		09A3F0AA1D60068400A54FBF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A3F0A91D60068400A54FBF /* Player.swift */; };
+		09A3F0AC1D618EB400A54FBF /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A3F0AB1D618EB400A54FBF /* Enemy.swift */; };
+		09A3F0AE1D6228C100A54FBF /* Bullets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A3F0AD1D6228C100A54FBF /* Bullets.swift */; };
+		09A3F0B01D62367400A54FBF /* Bombs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A3F0AF1D62367400A54FBF /* Bombs.swift */; };
 		09CC3E361D5A971B004BEB39 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CC3E351D5A971B004BEB39 /* AVFoundation.framework */; };
 		09D75D4F1D550BBC00AF76C5 /* Smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 09D75D4E1D550BBC00AF76C5 /* Smoke.sks */; };
 		09D75D511D550BE800AF76C5 /* Explode.sks in Resources */ = {isa = PBXBuildFile; fileRef = 09D75D501D550BE800AF76C5 /* Explode.sks */; };
@@ -97,8 +108,6 @@
 		091573521D5410DF00C9B907 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		0915736A1D54392D00C9B907 /* Gunfire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Gunfire.sks; sourceTree = "<group>"; };
 		0915736B1D54392D00C9B907 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
-		09217F391D5A3AA000BC070F /* Tank.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tank.sks; sourceTree = "<group>"; };
-		0922825F1D5A4AEA001405BB /* Missile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Missile.sks; sourceTree = "<group>"; };
 		093EABEC1D545F370069F120 /* Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Images.atlas; sourceTree = "<group>"; };
 		0948E8021D5CEDBC004F7E9F /* Coin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Coin.mp3; sourceTree = "<group>"; };
 		0948E8031D5CEDBC004F7E9F /* Hurt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Hurt.mp3; sourceTree = "<group>"; };
@@ -118,6 +127,19 @@
 		09A3F08B1D5D595500A54FBF /* thunder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = thunder.mp3; sourceTree = "<group>"; };
 		09A3F08D1D5D61C000A54FBF /* Rain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Rain.sks; sourceTree = "<group>"; };
 		09A3F0951D5E6D8D00A54FBF /* goods.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = goods.atlas; sourceTree = "<group>"; };
+		09A3F0971D5FB2FD00A54FBF /* BattleTheme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BattleTheme.mp3; sourceTree = "<group>"; };
+		09A3F0991D5FE8F500A54FBF /* Star.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
+		09A3F09B1D5FE95D00A54FBF /* GameSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSprite.swift; sourceTree = "<group>"; };
+		09A3F09D1D5FEA1000A54FBF /* Coins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coins.swift; sourceTree = "<group>"; };
+		09A3F09F1D5FF76900A54FBF /* ground.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = ground.atlas; sourceTree = "<group>"; };
+		09A3F0A01D5FF76900A54FBF /* enemies.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = enemies.atlas; sourceTree = "<group>"; };
+		09A3F0A11D5FF76900A54FBF /* planes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = planes.atlas; sourceTree = "<group>"; };
+		09A3F0A21D5FF76900A54FBF /* weapons.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = weapons.atlas; sourceTree = "<group>"; };
+		09A3F0A71D60062A00A54FBF /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
+		09A3F0A91D60068400A54FBF /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		09A3F0AB1D618EB400A54FBF /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
+		09A3F0AD1D6228C100A54FBF /* Bullets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bullets.swift; sourceTree = "<group>"; };
+		09A3F0AF1D62367400A54FBF /* Bombs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bombs.swift; sourceTree = "<group>"; };
 		09CC3E351D5A971B004BEB39 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		09D75D4E1D550BBC00AF76C5 /* Smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Smoke.sks; sourceTree = "<group>"; };
 		09D75D501D550BE800AF76C5 /* Explode.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explode.sks; sourceTree = "<group>"; };
@@ -225,8 +247,6 @@
 		0915734A1D540E8400C9B907 /* Scene.sks */ = {
 			isa = PBXGroup;
 			children = (
-				0922825F1D5A4AEA001405BB /* Missile.sks */,
-				09217F391D5A3AA000BC070F /* Tank.sks */,
 				091573181D540E1A00C9B907 /* GameScene.sks */,
 			);
 			name = Scene.sks;
@@ -236,6 +256,14 @@
 			isa = PBXGroup;
 			children = (
 				0915731A1D540E1A00C9B907 /* GameScene.swift */,
+				09A3F09B1D5FE95D00A54FBF /* GameSprite.swift */,
+				09A3F0A71D60062A00A54FBF /* Ground.swift */,
+				09A3F0A91D60068400A54FBF /* Player.swift */,
+				09A3F0991D5FE8F500A54FBF /* Star.swift */,
+				09A3F09D1D5FEA1000A54FBF /* Coins.swift */,
+				09A3F0AD1D6228C100A54FBF /* Bullets.swift */,
+				09A3F0AF1D62367400A54FBF /* Bombs.swift */,
+				09A3F0AB1D618EB400A54FBF /* Enemy.swift */,
 				09A3F07B1D5D158900A54FBF /* EnemyFire.swift */,
 				09A3F0851D5D371500A54FBF /* Tank.swift */,
 				09A3F07D1D5D15CB00A54FBF /* EnemyMissiles.swift */,
@@ -255,9 +283,13 @@
 		0915734D1D540EBA00C9B907 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				09A3F0951D5E6D8D00A54FBF /* goods.atlas */,
 				091573211D540E1A00C9B907 /* Assets.xcassets */,
+				09A3F09F1D5FF76900A54FBF /* ground.atlas */,
+				09A3F0A01D5FF76900A54FBF /* enemies.atlas */,
+				09A3F0951D5E6D8D00A54FBF /* goods.atlas */,
 				093EABEC1D545F370069F120 /* Images.atlas */,
+				09A3F0A11D5FF76900A54FBF /* planes.atlas */,
+				09A3F0A21D5FF76900A54FBF /* weapons.atlas */,
 				096092161D5453390085B693 /* Sound */,
 				091573261D540E1A00C9B907 /* Info.plist */,
 			);
@@ -303,6 +335,7 @@
 				0960921E1D5453390085B693 /* thump.mp3 */,
 				0960921B1D5453390085B693 /* crash.mp3 */,
 				096092191D5453390085B693 /* bomb.mp3 */,
+				09A3F0971D5FB2FD00A54FBF /* BattleTheme.mp3 */,
 				0960921A1D5453390085B693 /* bombDrop.mp3 */,
 				09A3F08B1D5D595500A54FBF /* thunder.mp3 */,
 				091457371D58E45500986C3B /* planesFight.mp3 */,
@@ -424,6 +457,7 @@
 			files = (
 				09D75D531D5515BF00AF76C5 /* SmokeTrail.sks in Resources */,
 				09A3F08E1D5D61C000A54FBF /* Rain.sks in Resources */,
+				09A3F0A51D5FF76900A54FBF /* planes.atlas in Resources */,
 				096092251D5453390085B693 /* star.mp3 in Resources */,
 				0914573C1D58E45500986C3B /* bGCannons.mp3 in Resources */,
 				0914573D1D58E45500986C3B /* planeMachineGun.mp3 in Resources */,
@@ -435,6 +469,7 @@
 				0948E8081D5CEDBC004F7E9F /* Powerup.mp3 in Resources */,
 				0948E8071D5CEDBC004F7E9F /* Hurt.mp3 in Resources */,
 				096092261D5453390085B693 /* thump.mp3 in Resources */,
+				09A3F0A61D5FF76900A54FBF /* weapons.atlas in Resources */,
 				091573191D540E1A00C9B907 /* GameScene.sks in Resources */,
 				091457391D58E45500986C3B /* airplaneFlyBy.mp3 in Resources */,
 				096092211D5453390085B693 /* bomb.mp3 in Resources */,
@@ -443,11 +478,13 @@
 				096092241D5453390085B693 /* gunfire.mp3 in Resources */,
 				093EABED1D545F370069F120 /* Images.atlas in Resources */,
 				091191191D5A1C810096801E /* FireExplosion.sks in Resources */,
-				092282601D5A4AEA001405BB /* Missile.sks in Resources */,
 				091573251D540E1A00C9B907 /* LaunchScreen.storyboard in Resources */,
+				09A3F0A31D5FF76900A54FBF /* ground.atlas in Resources */,
 				091573221D540E1A00C9B907 /* Assets.xcassets in Resources */,
 				091573201D540E1A00C9B907 /* Main.storyboard in Resources */,
 				0914573E1D58E45500986C3B /* planesFight.mp3 in Resources */,
+				09A3F0981D5FB2FD00A54FBF /* BattleTheme.mp3 in Resources */,
+				09A3F0A41D5FF76900A54FBF /* enemies.atlas in Resources */,
 				0960921F1D5453390085B693 /* bgMusic.mp3 in Resources */,
 				0948E8061D5CEDBC004F7E9F /* Coin.mp3 in Resources */,
 				09A3F0961D5E6D8D00A54FBF /* goods.atlas in Resources */,
@@ -455,7 +492,6 @@
 				096092201D5453390085B693 /* biplaneFlying.mp3 in Resources */,
 				0914573B1D58E45500986C3B /* tankFiring.mp3 in Resources */,
 				0915736C1D54392D00C9B907 /* Gunfire.sks in Resources */,
-				09217F3A1D5A3AA000BC070F /* Tank.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,9 +516,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09A3F0AA1D60068400A54FBF /* Player.swift in Sources */,
 				0915731B1D540E1A00C9B907 /* GameScene.swift in Sources */,
 				0915731D1D540E1A00C9B907 /* GameViewController.swift in Sources */,
+				09A3F0B01D62367400A54FBF /* Bombs.swift in Sources */,
 				09A3F0861D5D371500A54FBF /* Tank.swift in Sources */,
+				09A3F09A1D5FE8F500A54FBF /* Star.swift in Sources */,
+				09A3F0A81D60062A00A54FBF /* Ground.swift in Sources */,
+				09A3F09C1D5FE95D00A54FBF /* GameSprite.swift in Sources */,
+				09A3F09E1D5FEA1000A54FBF /* Coins.swift in Sources */,
+				09A3F0AC1D618EB400A54FBF /* Enemy.swift in Sources */,
+				09A3F0AE1D6228C100A54FBF /* Bullets.swift in Sources */,
 				091573171D540E1A00C9B907 /* AppDelegate.swift in Sources */,
 				09A3F07C1D5D158900A54FBF /* EnemyFire.swift in Sources */,
 				09A3F07E1D5D15CB00A54FBF /* EnemyMissiles.swift in Sources */,
