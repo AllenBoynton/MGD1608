@@ -43,9 +43,6 @@ class GameViewController: UIViewController {
         /* Set the scale mode to scale to fit the window */
         scene.scaleMode = .AspectFit
         
-        // size our scene to fit the view exactly:
-//        scene.size = view.bounds.size
-        
         // show the new scene:
         skView.presentScene(scene)
     }
@@ -55,7 +52,13 @@ class GameViewController: UIViewController {
     }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.Landscape
+        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
+            return .Landscape
+        } else if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            return .Landscape
+        } else {
+            return .All
+        }
     }
     
     override func didReceiveMemoryWarning() {

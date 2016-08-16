@@ -17,6 +17,7 @@ class Coins: SKSpriteNode, GameSprite {
         parentNode.addChild(self)
         self.size = size
         self.position = position
+        self.zPosition = 5
         self.physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
         self.physicsBody?.affectedByGravity = false
         self.texture = textureAtlas.textureNamed("coin-bronze.png")
