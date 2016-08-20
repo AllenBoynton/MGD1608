@@ -33,5 +33,40 @@
 //        MyPlane.runAction(moveAction)
 
         
+// Spawn ground tank - it can't fly!! ;)
+//func spawnTank() {
+//    
+//    // Spawning an enemy tank
+//    tank = SKSpriteNode(imageNamed: "tank")
+//    tank.setScale(0.2)
+//    tank.zPosition = 2
+//    
+//    tank.position = CGPoint(x: self.size.width, y: self.size.height + 150)
+//    
+//    // Added tank physics
+//    tank.physicsBody = SKPhysicsBody(rectangleOfSize: tank.size)
+//    tank.physicsBody?.affectedByGravity = false
+//    tank.physicsBody?.categoryBitMask = PhysicsCategory.Tank32
+//    tank.physicsBody?.contactTestBitMask = PhysicsCategory.Player8 | PhysicsCategory.MyBullets2 | PhysicsCategory.Enemy16 | PhysicsCategory.EnemyFire64
+//    tank.physicsBody?.collisionBitMask = 32
+//    tank.physicsBody?.dynamic = true
+//    
+//    // Shoot em up!
+//    let action = SKAction.moveToX(-200, duration: 8.0)
+//    let actionDone = SKAction.removeFromParent()
+//    tank.runAction(SKAction.sequence([action, actionDone]))
+//    
+//    self.addChild(tank) // Generate enemy tank
+//    
+//    // Add sound
+//    tankSound = SKAudioNode(fileNamed: "tank")
+//    tankSound.runAction(SKAction.play())
+//    tankSound.autoplayLooped = false
+//    
+//    self.addChild(tankSound)
+//}
+//
+//}
+
 
     
