@@ -5,9 +5,9 @@ Allen Boynton
 
 https://github.com/AllenBoynton/MGD-1608
 
-3 Sprites - I have more than that but the Bi-Plane, Bullet and Star, 4 enemy planes, 2 ally planes, etc.
+3 Sprites - I have more than that but the Bi-Plane, Bullet and Star, enemy planes, 2 ally planes, etc.
 
-2 Sound Effects - Sound of planes, gunfire sound, thunderstorm sound plus many more
+2 Sound Effects - Sound of planes, gunfire sound, power up sound plus many more
 
 1 Type of input control (tap) - Release of tap fires bullets
 
@@ -32,4 +32,24 @@ Game works fine on either iPhone 6 or 6 Plus also my iPad when set up for it in 
 Game Over functions in place. Will have separate scene with score and either Game Over or Victory.
 
 
+3 Sprites
+2 Sound effects
+1 Type of input control
+1 Point to entity collision
+1 Sprite movement with linear interpolation
+1 Entity to entity collision
+2 Game events including appropriate sound
+1 Sprite animation
+1 Working pause button
+1 Other GUI element (health meter, score, etc.)
+1 Visual feedback mechanism
+Appropriate entity sizes and spacing for 2 devices
+Game win/lose conditions in place
+4 Application scenes
+Splash Screen
+Main Menu
+Play Game
+Game Credits
+Game instructions (either in-game or through a separate scene)
+Proper app icon
 

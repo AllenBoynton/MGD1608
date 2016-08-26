@@ -235,10 +235,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         createBackground()
         
         // Adding scrolling midground
-        createMidground()
+//        createMidground()
 
         // Adding scrolling foreground
-        createForeground()
+//        createForeground()
         
     }
     
@@ -254,33 +254,33 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             gameStarted = true
             
             // Once game scene is open, all is delayed by 3 seconds
-            let spawn = SKAction.runBlock({ 
-                () in
-                
-                self.createPlane()
-                self.moveBackground()
-                self.moveMidground()
-                self.moveForeground()
-                self.spawnBullets()
-                self.spawnEnemyPlane()
-                self.spawnWingmen()
-                self.paratrooperJump()
-                self.spawnEnemyFire()
-                self.skyExplosions()
-//                self.spawnSoldiers()
-//                self.spawnTurrets()
-//                self.spawnTanks()
-//                self.spawnCoins()
-                self.spawnPowerUps()
-                self.createHUD()
-                
-            })
-            
-            let delay = SKAction.waitForDuration(3.0)
-            let spawnDelay = SKAction.sequence([spawn, delay])
-            let spawnDelayForever = SKAction.repeatActionForever(spawnDelay)
-            self.runAction(spawnDelayForever)
-            
+//            let spawn = SKAction.runBlock({ 
+//                () in
+//                
+//                self.createPlane()
+//                self.moveBackground()
+//                self.moveMidground()
+//                self.moveForeground()
+//                self.spawnBullets()
+//                self.spawnEnemyPlane()
+//                self.spawnWingmen()
+//                self.paratrooperJump()
+//                self.spawnEnemyFire()
+//                self.skyExplosions()
+////                self.spawnSoldiers()
+////                self.spawnTurrets()
+////                self.spawnTanks()
+////                self.spawnCoins()
+//                self.spawnPowerUps()
+//                self.createHUD()
+//                
+//            })
+//            
+//            let delay = SKAction.waitForDuration(3.0)
+//            let spawnDelay = SKAction.sequence([spawn, delay])
+//            let spawnDelayForever = SKAction.repeatActionForever(spawnDelay)
+//            self.runAction(spawnDelayForever)
+//            
             
             touchLocation = touches.first!.locationInNode(self)
             
@@ -492,7 +492,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         moveForeground()
         
         // Updates position of plane for health bar
-//        playerHealthBar.position = CGPoint(x: myPlane.position.x, y: myPlane.position.y - myPlane.size.height / 2)
+        playerHealthBar.position = CGPoint(x: myPlane.position.x, y: myPlane.position.y - myPlane.size.height / 2)
         
         // Adding to gameplay health attributes
         healthLabel.text = "Health: \(health)"

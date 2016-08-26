@@ -6,7 +6,7 @@
 //  Copyright © 2016 Full Sail. All rights reserved.
 //
 
-import UIKit
+
 import SpriteKit
 import AVFoundation
 
@@ -17,7 +17,7 @@ class MainMenu: SKScene {
     func viewDidLoad() {
         viewDidLoad()
         
-        if let scene = GameScene.unarchiveFromFile("InstructionScene") as? InstructionScene {
+        if let scene = InstructionScene.unarchiveFromFile("InstructionScene") as? InstructionScene {
             // Configure the view.
             let skView = self.view as SKView!
             skView.showsFPS = true
@@ -62,8 +62,8 @@ class MainMenu: SKScene {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        let game: GameScene = GameScene(fileNamed: "GameScene")!
-        game.scaleMode = .AspectFill
+        let game: InstructionScene = InstructionScene(fileNamed: "InstructionScene")!
+        game.scaleMode = .AspectFit
         let transition: SKTransition = SKTransition.moveInWithDirection(.Down, duration: 2.0)
         self.view?.presentScene(game, transition: transition)
         
@@ -72,8 +72,8 @@ class MainMenu: SKScene {
         screenText.zPosition = 15
         screenText.color = UIColor.blackColor()
         screenText.colorBlendFactor = CGFloat(0.0)
-        screenText.fontSize = 85
-        screenText.text = "TOUCH ANYWHERE TO PLAY!"
+        screenText.fontSize = 80
+        screenText.text = "TOUCH ANYWHERE TO CONTINUE!"
         screenText.position = CGPoint(x: self.frame.size.width / 2, y: self.frame.size.height * 0.1)
         self.addChild(screenText)
         
