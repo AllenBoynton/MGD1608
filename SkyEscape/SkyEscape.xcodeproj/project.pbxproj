@@ -30,7 +30,6 @@
 		09213C031D6784FE0086D465 /* flyBy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 09213C021D6784FE0086D465 /* flyBy.mp3 */; };
 		09213C071D6797070086D465 /* mp5Gun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 09213C061D6797070086D465 /* mp5Gun.mp3 */; };
 		09213C091D68E0840086D465 /* RandomFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09213C081D68E0840086D465 /* RandomFunction.swift */; };
-		093EABED1D545F370069F120 /* Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 093EABEC1D545F370069F120 /* Images.atlas */; };
 		0960921F1D5453390085B693 /* bgMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 096092171D5453390085B693 /* bgMusic.mp3 */; };
 		096092201D5453390085B693 /* biplaneFlying.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 096092181D5453390085B693 /* biplaneFlying.mp3 */; };
 		096092221D5453390085B693 /* bombDrop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0960921A1D5453390085B693 /* bombDrop.mp3 */; };
@@ -63,6 +62,7 @@
 		09C864D51D6D430400C2023B /* TankAttack.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 09C864D01D6D430400C2023B /* TankAttack.atlas */; };
 		09C864D61D6D430400C2023B /* TankForward.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 09C864D11D6D430400C2023B /* TankForward.atlas */; };
 		09C864DA1D6D43CB00C2023B /* powerUp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 09C864D91D6D43CB00C2023B /* powerUp.mp3 */; };
+		09C864DE1D6FEBC800C2023B /* InstructionScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 09C864DD1D6FEBC800C2023B /* InstructionScene.sks */; };
 		09CC3E361D5A971B004BEB39 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CC3E351D5A971B004BEB39 /* AVFoundation.framework */; };
 		09D75D4F1D550BBC00AF76C5 /* Smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 09D75D4E1D550BBC00AF76C5 /* Smoke.sks */; };
 		09D75D511D550BE800AF76C5 /* Explode.sks in Resources */ = {isa = PBXBuildFile; fileRef = 09D75D501D550BE800AF76C5 /* Explode.sks */; };
@@ -120,7 +120,6 @@
 		09213C021D6784FE0086D465 /* flyBy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = flyBy.mp3; sourceTree = "<group>"; };
 		09213C061D6797070086D465 /* mp5Gun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mp5Gun.mp3; sourceTree = "<group>"; };
 		09213C081D68E0840086D465 /* RandomFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomFunction.swift; sourceTree = "<group>"; };
-		093EABEC1D545F370069F120 /* Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Images.atlas; sourceTree = "<group>"; };
 		096092171D5453390085B693 /* bgMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgMusic.mp3; sourceTree = "<group>"; };
 		096092181D5453390085B693 /* biplaneFlying.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = biplaneFlying.mp3; sourceTree = "<group>"; };
 		0960921A1D5453390085B693 /* bombDrop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bombDrop.mp3; sourceTree = "<group>"; };
@@ -153,6 +152,7 @@
 		09C864D01D6D430400C2023B /* TankAttack.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = TankAttack.atlas; sourceTree = "<group>"; };
 		09C864D11D6D430400C2023B /* TankForward.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = TankForward.atlas; sourceTree = "<group>"; };
 		09C864D91D6D43CB00C2023B /* powerUp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = powerUp.mp3; sourceTree = "<group>"; };
+		09C864DD1D6FEBC800C2023B /* InstructionScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = InstructionScene.sks; sourceTree = "<group>"; };
 		09CC3E351D5A971B004BEB39 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		09D75D4E1D550BBC00AF76C5 /* Smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Smoke.sks; sourceTree = "<group>"; };
 		09D75D501D550BE800AF76C5 /* Explode.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explode.sks; sourceTree = "<group>"; };
@@ -379,7 +379,6 @@
 				09C864C71D6D182E00C2023B /* EnemyPlanes.atlas */,
 				09C864CB1D6D41DB00C2023B /* EnemyPlanes2.atlas */,
 				09C864CD1D6D430400C2023B /* Turret.atlas */,
-				093EABEC1D545F370069F120 /* Images.atlas */,
 				09C864CE1D6D430400C2023B /* SoldierShoot.atlas */,
 				09C864CF1D6D430400C2023B /* SoldierWalk.atlas */,
 				09C864D01D6D430400C2023B /* TankAttack.atlas */,
@@ -399,6 +398,7 @@
 		09C864C21D6CD60F00C2023B /* InstructionScene */ = {
 			isa = PBXGroup;
 			children = (
+				09C864DD1D6FEBC800C2023B /* InstructionScene.sks */,
 				09C864C01D6CD5FC00C2023B /* InstructionScene.swift */,
 			);
 			name = InstructionScene;
@@ -533,7 +533,6 @@
 				09213C071D6797070086D465 /* mp5Gun.mp3 in Resources */,
 				0915736D1D54392D00C9B907 /* spark.png in Resources */,
 				096092241D5453390085B693 /* gunfire.mp3 in Resources */,
-				093EABED1D545F370069F120 /* Images.atlas in Resources */,
 				0967DE731D6A432C00832C98 /* Thank you.pdf in Resources */,
 				091191191D5A1C810096801E /* FireExplosion.sks in Resources */,
 				091573251D540E1A00C9B907 /* LaunchScreen.storyboard in Resources */,
@@ -546,6 +545,7 @@
 				091630911D653F6700E86A4E /* GameScene.sks in Resources */,
 				09213BF71D66DE320086D465 /* prop.mp3 in Resources */,
 				0960921F1D5453390085B693 /* bgMusic.mp3 in Resources */,
+				09C864DE1D6FEBC800C2023B /* InstructionScene.sks in Resources */,
 				09D75D4F1D550BBC00AF76C5 /* Smoke.sks in Resources */,
 				09E1A2F71D694AD400411D1E /* guardianpi.ttf in Resources */,
 				096092201D5453390085B693 /* biplaneFlying.mp3 in Resources */,

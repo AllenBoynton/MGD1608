@@ -16,7 +16,7 @@ extension SKNode {
             let archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
             
             archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
-            let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as! GameScene
+            let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as! MainMenu
             archiver.finishDecoding()
             return scene
         } else {
@@ -30,7 +30,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
+        if let scene = MainMenu.unarchiveFromFile("MainMenu") as? MainMenu {
             // Configure the view.
             let skView = self.view as! SKView
             skView.showsFPS = true
@@ -51,7 +51,7 @@ class GameViewController: UIViewController {
     }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
             return UIInterfaceOrientationMask.Landscape
         } else {
             return UIInterfaceOrientationMask.LandscapeLeft
