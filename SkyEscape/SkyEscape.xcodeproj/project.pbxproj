@@ -24,7 +24,6 @@
 		091630911D653F6700E86A4E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 091630901D653F6700E86A4E /* GameScene.sks */; };
 		09213BF71D66DE320086D465 /* prop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 09213BF61D66DE320086D465 /* prop.mp3 */; };
 		09213BF91D66DE400086D465 /* machGun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 09213BF81D66DE400086D465 /* machGun.mp3 */; };
-		09213BFB1D676E7D0086D465 /* battle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 09213BFA1D676E7D0086D465 /* battle.mp3 */; };
 		09213BFD1D676E840086D465 /* skyBoom.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 09213BFC1D676E840086D465 /* skyBoom.mp3 */; };
 		09213BFF1D67723A0086D465 /* SkyBombs.sks in Resources */ = {isa = PBXBuildFile; fileRef = 09213BFE1D67723A0086D465 /* SkyBombs.sks */; };
 		09213C031D6784FE0086D465 /* flyBy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 09213C021D6784FE0086D465 /* flyBy.mp3 */; };
@@ -38,7 +37,6 @@
 		0967DE641D6A42EA00832C98 /* Airplanes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 0967DE631D6A42EA00832C98 /* Airplanes.atlas */; };
 		0967DE661D6A42F900832C98 /* Assets.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 0967DE651D6A42F900832C98 /* Assets.atlas */; };
 		0967DE731D6A432C00832C98 /* Thank you.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0967DE721D6A432C00832C98 /* Thank you.pdf */; };
-		0967DE8D1D6A9F6700832C98 /* MyPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967DE8C1D6A9F6700832C98 /* MyPlane.swift */; };
 		09A3F07C1D5D158900A54FBF /* EnemyFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A3F07B1D5D158900A54FBF /* EnemyFire.swift */; };
 		09A3F07E1D5D15CB00A54FBF /* EnemyMissiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A3F07D1D5D15CB00A54FBF /* EnemyMissiles.swift */; };
 		09A3F0861D5D371500A54FBF /* Tank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A3F0851D5D371500A54FBF /* Tank.swift */; };
@@ -114,7 +112,6 @@
 		091630901D653F6700E86A4E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		09213BF61D66DE320086D465 /* prop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = prop.mp3; sourceTree = "<group>"; };
 		09213BF81D66DE400086D465 /* machGun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = machGun.mp3; sourceTree = "<group>"; };
-		09213BFA1D676E7D0086D465 /* battle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = battle.mp3; sourceTree = "<group>"; };
 		09213BFC1D676E840086D465 /* skyBoom.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = skyBoom.mp3; sourceTree = "<group>"; };
 		09213BFE1D67723A0086D465 /* SkyBombs.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SkyBombs.sks; sourceTree = "<group>"; };
 		09213C021D6784FE0086D465 /* flyBy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = flyBy.mp3; sourceTree = "<group>"; };
@@ -128,7 +125,6 @@
 		0967DE631D6A42EA00832C98 /* Airplanes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Airplanes.atlas; sourceTree = "<group>"; };
 		0967DE651D6A42F900832C98 /* Assets.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Assets.atlas; sourceTree = "<group>"; };
 		0967DE721D6A432C00832C98 /* Thank you.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Thank you.pdf"; sourceTree = "<group>"; };
-		0967DE8C1D6A9F6700832C98 /* MyPlane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlane.swift; sourceTree = "<group>"; };
 		09A3F07B1D5D158900A54FBF /* EnemyFire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyFire.swift; sourceTree = "<group>"; };
 		09A3F07D1D5D15CB00A54FBF /* EnemyMissiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyMissiles.swift; sourceTree = "<group>"; };
 		09A3F0851D5D371500A54FBF /* Tank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tank.swift; sourceTree = "<group>"; };
@@ -221,7 +217,6 @@
 				0915734D1D540EBA00C9B907 /* Resources */,
 				09C864C21D6CD60F00C2023B /* InstructionScene */,
 				0915734A1D540E8400C9B907 /* MainMenu.sks */,
-				0967DE8B1D6A9F2200832C98 /* MyPlane */,
 				0915734B1D540E9100C9B907 /* GameScene.swift */,
 				091573481D540E4D00C9B907 /* ViewControllers */,
 				0915734C1D540EA400C9B907 /* Storyboards */,
@@ -348,7 +343,6 @@
 			isa = PBXGroup;
 			children = (
 				091457321D58E45500986C3B /* airplaneFlyBy.mp3 */,
-				09213BFA1D676E7D0086D465 /* battle.mp3 */,
 				091457351D58E45500986C3B /* bGCannons.mp3 */,
 				096092171D5453390085B693 /* bgMusic.mp3 */,
 				096092181D5453390085B693 /* biplaneFlying.mp3 */,
@@ -385,14 +379,6 @@
 				09C864D11D6D430400C2023B /* TankForward.atlas */,
 			);
 			name = Graphics;
-			sourceTree = "<group>";
-		};
-		0967DE8B1D6A9F2200832C98 /* MyPlane */ = {
-			isa = PBXGroup;
-			children = (
-				0967DE8C1D6A9F6700832C98 /* MyPlane.swift */,
-			);
-			name = MyPlane;
 			sourceTree = "<group>";
 		};
 		09C864C21D6CD60F00C2023B /* InstructionScene */ = {
@@ -515,7 +501,6 @@
 				09C864BD1D6CCBBE00C2023B /* tank.mp3 in Resources */,
 				09C864CA1D6D40DF00C2023B /* AllyPlanes2.atlas in Resources */,
 				0967DE661D6A42F900832C98 /* Assets.atlas in Resources */,
-				09213BFB1D676E7D0086D465 /* battle.mp3 in Resources */,
 				0914573C1D58E45500986C3B /* bGCannons.mp3 in Resources */,
 				096092221D5453390085B693 /* bombDrop.mp3 in Resources */,
 				09C864D51D6D430400C2023B /* TankAttack.atlas in Resources */,
@@ -578,7 +563,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0967DE8D1D6A9F6700832C98 /* MyPlane.swift in Sources */,
 				09C864C11D6CD5FC00C2023B /* InstructionScene.swift in Sources */,
 				09A3F0AA1D60068400A54FBF /* Player.swift in Sources */,
 				09213C091D68E0840086D465 /* RandomFunction.swift in Sources */,

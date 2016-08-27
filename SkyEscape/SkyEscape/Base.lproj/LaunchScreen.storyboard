@@ -39,7 +39,7 @@
                                 <size key="shadowOffset" width="2" height="-2"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fokker" translatesAutoresizingMaskIntoConstraints="NO" id="jSP-hM-bkH">
-                                <rect key="frame" x="341" y="47" width="256" height="256"/>
+                                <rect key="frame" x="341" y="27" width="256" height="256"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="256" id="gPw-xd-psy"/>
                                     <constraint firstAttribute="width" constant="256" id="mmE-KM-mrA"/>
@@ -64,22 +64,11 @@
                                 <color key="shadowColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <size key="shadowOffset" width="2" height="-2"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgh-wc-DP7">
-                                <rect key="frame" x="261" y="164" width="90" height="2"/>
-                                <color key="backgroundColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="85" id="NoB-JD-PSX"/>
-                                    <constraint firstAttribute="height" constant="2" id="dQk-DP-aJA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.69803923369999998" green="0.84313726430000002" blue="1" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="WNQ-O9-skf" firstAttribute="leading" secondItem="Oac-Es-Y2p" secondAttribute="leadingMargin" id="1pC-18-1yt"/>
-                            <constraint firstItem="UAq-Uz-rGl" firstAttribute="top" secondItem="jSP-hM-bkH" secondAttribute="bottom" constant="20" id="Jdy-uz-6S7"/>
+                            <constraint firstItem="UAq-Uz-rGl" firstAttribute="top" secondItem="jSP-hM-bkH" secondAttribute="bottom" constant="40" id="Jdy-uz-6S7"/>
                             <constraint firstItem="ZVk-R2-loN" firstAttribute="top" secondItem="UAq-Uz-rGl" secondAttribute="bottom" id="QGc-s7-k8g"/>
                             <constraint firstAttribute="trailing" secondItem="UAq-Uz-rGl" secondAttribute="trailing" id="Y5C-BL-0fe"/>
                             <constraint firstItem="UAq-Uz-rGl" firstAttribute="leading" secondItem="Oac-Es-Y2p" secondAttribute="leading" id="Z2X-Q0-ONI"/>
