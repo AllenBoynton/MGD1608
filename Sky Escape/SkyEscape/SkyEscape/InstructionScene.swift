@@ -12,22 +12,22 @@ import AVFoundation
 
 class InstructionScene: SKScene {
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         
         bGCannonsSound = SKAudioNode(fileNamed: "bgCannons")
-        bGCannonsSound.runAction(SKAction.play())
+        bGCannonsSound.run(SKAction.play())
         bGCannonsSound.autoplayLooped = true
         
         bGCannonsSound.removeFromParent()
         self.addChild(bGCannonsSound)
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         // Brings user back to main menu
         let game: GameScene = GameScene(fileNamed: "GameScene")!
-        game.scaleMode = .AspectFit
-        let transition: SKTransition = SKTransition.doorsOpenVerticalWithDuration(3.0)
+        game.scaleMode = .aspectFit
+        let transition: SKTransition = SKTransition.doorsOpenVertical(withDuration: 3.0)
         self.view?.presentScene(game, transition: transition)
     }
 }
